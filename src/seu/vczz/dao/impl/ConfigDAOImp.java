@@ -1,15 +1,15 @@
 package seu.vczz.dao.impl;
 
-import java.util.List;
-
 import seu.vczz.dao.inter.ConfigDAO;
 import seu.vczz.entity.Config;
+
+import java.util.List;
 
 public class ConfigDAOImp implements ConfigDAO{
 
 	@Override
 	public void add(Config config) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
