@@ -1,17 +1,36 @@
 package seu.vczz.dao.impl;
 
-import java.util.Date;
-import java.util.List;
-
 import seu.vczz.dao.inter.RecordDAO;
 import seu.vczz.entity.Record;
+import seu.vczz.util.DBUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.List;
 
 public class RecordDAOImp implements RecordDAO{
 
 	@Override
 	public void add(Record record) {
-		// TODO Auto-generated method stub
-		
+		String sql = "INSERT INTO record VALUE(NULL, ?, ?, ?, ?)";
+		try {
+			Connection con = DBUtil.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, record.getSpend());
+			ps.setInt(2, record.getCid());
+			ps.setString(3, record.getComment());
+			ps.setDate(4, (java.sql.Date) record.getDate());//待更新  DateUtil.util2sql(record.getDate())
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()){
+				record.setId(rs.getInt(1));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
