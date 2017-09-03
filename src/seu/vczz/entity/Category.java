@@ -5,6 +5,16 @@ public class Category {
 	private int id;
 	private String name;
 
+	public int getRecordNum() {
+		return recordNum;
+	}
+
+	public void setRecordNum(int recordNum) {
+		this.recordNum = recordNum;
+	}
+
+	private int recordNum;
+
 	public String getName() {
 		return name;
 	}
