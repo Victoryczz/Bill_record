@@ -1,5 +1,7 @@
 package seu.vczz.util;
 
+import seu.vczz.gui.panel.WorkingPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -35,7 +37,7 @@ public class CenterPanelUtil extends JPanel{
         }
         super.repaint();
     }
-    @Override
+
     public void show(JComponent component){
         this.component = component;
         Component[] cs = getComponents();
@@ -43,7 +45,7 @@ public class CenterPanelUtil extends JPanel{
             remove(c);
         }
         add(component);
-        if (component is WorkingPanel){
+        if (component instanceof WorkingPanel){
             ((WorkingPanel)component).updateData();
         }
         this.updateUI();
