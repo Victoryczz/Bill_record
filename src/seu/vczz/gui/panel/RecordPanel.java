@@ -4,6 +4,7 @@ import org.jdesktop.swingx.JXDatePicker;
 import seu.vczz.entity.Category;
 import seu.vczz.gui.listener.RecordListener;
 import seu.vczz.gui.model.CategoryComboBoxModel;
+import seu.vczz.service.CategoryService;
 import seu.vczz.util.ColorUtil;
 import seu.vczz.util.GUIUtil;
 
@@ -64,12 +65,31 @@ public class RecordPanel extends WorkingPanel{
 
     @Override
     public void updateData() {
-
+        categoryComboBoxModel.categories = new CategoryService().list();
+        categoryJComboBox.updateUI();
+        resetInput();
+        textFieldSpend.grabFocus();
     }
 
     @Override
     public void addListener() {
         RecordListener listener = new RecordListener();
         bSubmit.addActionListener(listener);
+    }
+
+    public void resetInput(){
+        textFieldSpend.setText("0");
+        textFieldComment.setText("");
+        if (categoryComboBoxModel.categories.size() != 0)
+            categoryComboBoxModel.setSelectedItem(0);
+        datePicker.setDate(new Date());
+    }
+
+    public Category getSelectedCategory(){
+        return (Category) categoryJComboBox.getSelectedItem();
+    }
+
+    public static void main(String[] args){
+        GUIUtil.showPanel(RecordPanel.instance);
     }
 }
