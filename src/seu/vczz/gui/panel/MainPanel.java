@@ -51,12 +51,21 @@ public class MainPanel extends JPanel {
         add(workPanel, BorderLayout.CENTER);
 
 
-
-
-
+        addListener();
     }
 
     public void addListener(){
         ToolBarListener toolbarlistener = new ToolBarListener();
+        bSpend.addActionListener(toolbarlistener);
+        bCategory.addActionListener(toolbarlistener);
+        bRecord.addActionListener(toolbarlistener);
+        bReport.addActionListener(toolbarlistener);
+        bBackup.addActionListener(toolbarlistener);
+        bRecover.addActionListener(toolbarlistener);
+        bConfig.addActionListener(toolbarlistener);
+    }
+
+    public static void main(String[] args){
+        GUIUtil.showPanel(MainPanel.instance, 1);
     }
 }
