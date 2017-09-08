@@ -1,8 +1,6 @@
 package seu.vczz.gui.listener;
 
-import seu.vczz.gui.panel.BackupPanel;
-import seu.vczz.gui.panel.CategoryPanel;
-import seu.vczz.gui.panel.MainPanel;
+import seu.vczz.gui.panel.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +17,14 @@ public class ToolBarListener implements ActionListener {
         if (b == p.bCategory)
             p.workPanel.show(CategoryPanel.instance);
         if(b == p.bConfig)
-            p.workPanel.show();
+            p.workPanel.show(ConfigPanel.instance);
+        if (b == p.bRecord)
+            p.workPanel.show(RecordPanel.instance);
+        if (b == p.bRecover)
+            p.workPanel.show(RecoverPanel.instance);
+        if (b == p.bReport)
+            p.workPanel.show(ReportPanel.instance);
+        if (b == p.bSpend)
+            p.workPanel.show(SpendPanel.instance);
     }
 }
