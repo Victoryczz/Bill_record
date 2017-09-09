@@ -6,9 +6,9 @@ import java.util.Date;
 public class DateUtil {
 
     static long millisecondsofOneDay = 1000*60*60*24;
-
+    //不能这么搞，不能直接强转
     public static java.sql.Date util2sql(Date date){
-        return (java.sql.Date) date;
+        return new java.sql.Date(date.getTime());
     }
 
     public static Date today(){

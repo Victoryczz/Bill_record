@@ -24,7 +24,7 @@ public class RecordDAOImp implements RecordDAO{
 			ps.setInt(1, record.getSpend());
 			ps.setInt(2, record.getCid());
 			ps.setString(3, record.getComment());
-			ps.setDate(4, (java.sql.Date) record.getDate());//待更新  DateUtil.util2sql(record.getDate())
+			ps.setDate(4, DateUtil.util2sql(record.getDate()));//待更新  DateUtil.util2sql(record.getDate())
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()){
 				record.setId(rs.getInt(1));
@@ -129,8 +129,8 @@ public class RecordDAOImp implements RecordDAO{
 			String sql = "SELECT * FROM record ORDER BY id DESC WHERE date >=? and date <=? ";
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setDate(1, (java.sql.Date) dateFrom);
-			ps.setDate(2, (java.sql.Date) dataTo);
+			ps.setDate(1, DateUtil.util2sql(dateFrom) );
+			ps.setDate(2, DateUtil.util2sql(dataTo));
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()){
 				Record record = new Record();
@@ -196,7 +196,7 @@ public class RecordDAOImp implements RecordDAO{
 			String sql = "SELECT * FROM record ORDER BY id DESC WHERE date =? ";
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setDate(1, (java.sql.Date) DateUtil.today());
+			ps.setDate(1, DateUtil.util2sql(DateUtil.today()));
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()){
 				Record record = new Record();
