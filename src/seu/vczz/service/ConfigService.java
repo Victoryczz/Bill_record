@@ -5,7 +5,9 @@ import seu.vczz.dao.impl.ConfigDAOImp;
 import seu.vczz.dao.inter.ConfigDAO;
 import seu.vczz.entity.Config;
 
-
+/**
+ * config的service层
+ */
 public class ConfigService {
     static ConfigDAO configDAO = new ConfigDAOImp();
 
@@ -49,7 +51,7 @@ public class ConfigService {
      */
     public void update(String key_, String value){
         Config config = configDAO.getByKey(key_);
-        config.setValue(config.getValue());
+        config.setValue(value);
         configDAO.update(config);
     }
 

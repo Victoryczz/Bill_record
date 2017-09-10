@@ -12,7 +12,10 @@ import java.util.List;
  * 应该是预览消费窗口使用的service层
  */
 public class SpendService {
-
+    /**
+     * 获得报表的page页面
+     * @return
+     */
     public SpendPage getSpendPage(){
         RecordDAO recordDAO = new RecordDAOImp();
         //月记录

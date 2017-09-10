@@ -6,6 +6,9 @@ import seu.vczz.service.CategoryService;
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
+/**
+ * 组合table
+ */
 public class CategoryTableModel extends AbstractTableModel{
 
     String[] columnsNames = new String[]{"分类名称", "消费次数"};

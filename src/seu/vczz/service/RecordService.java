@@ -7,8 +7,11 @@ import seu.vczz.entity.Record;
 
 import java.util.Date;
 
+/**
+ * record的service层,现在有缺陷，不能修改记录或者删除记录
+ */
 public class RecordService {
-    RecordDAO recordDAO = new RecordDAOImp();
+    static RecordDAO recordDAO = new RecordDAOImp();
 
     /**
      * 增加一个条目，以消费额为基础，要选择条目，评语和时间，构成新的record，然后添加

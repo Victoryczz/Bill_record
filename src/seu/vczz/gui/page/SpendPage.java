@@ -1,5 +1,8 @@
 package seu.vczz.gui.page;
 
+/**
+ * 花费页面
+ */
 public class SpendPage {
     //本月支出
 
@@ -13,7 +16,7 @@ public class SpendPage {
     //日均可用
     public String dayAvgAvailable;
     //本月剩余天数
-    public String monthLsftDay;
+    public String monthLeftDay;
     //已使用比例
     public int usagePercentage;
     //是否超支
@@ -23,7 +26,7 @@ public class SpendPage {
                      int monthLeftDay, int usagePercentage){
         this.monthSpend = "¥"+monthSpend;
         this.todaySpend = "¥"+todaySpend;
-        this.avgSpendPerDay = ""+avgSpendPerDay;
+        this.avgSpendPerDay = "¥"+avgSpendPerDay;
 
         if (monthAvailable < 0)
             isOverSpend = true;
@@ -36,7 +39,7 @@ public class SpendPage {
             this.dayAvgAvailable = "¥0";
         }
 
-        this.monthLsftDay = "¥"+monthLeftDay;
+        this.monthLeftDay = monthLeftDay + "天";
         this.usagePercentage = usagePercentage;
 
 

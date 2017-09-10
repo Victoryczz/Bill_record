@@ -7,6 +7,9 @@ import javax.swing.*;
 import javax.swing.event.ListDataListener;
 import java.util.List;
 
+/**
+ * 组合选择框
+ */
 public class CategoryComboBoxModel implements ComboBoxModel<Category>{
     //或得列表
     public List<Category> categories = new CategoryService().list();

@@ -9,6 +9,9 @@ import seu.vczz.entity.Record;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * category的service层
+ */
 public class CategoryService {
     static CategoryDAO categoryDAO = new CategoryDAOImp();
     static RecordDAO recordDAO = new RecordDAOImp();
@@ -18,9 +21,12 @@ public class CategoryService {
      * @return
      */
     public List<Category> list(){
+        //所有分类条目
         List<Category> categories = categoryDAO.getAll();
         for (Category c : categories){
+            //每个条目下的所有记录
             List<Record> records = recordDAO.getByCategoryId(c.getId());
+            //设置每个条目下记录的数目
             c.setRecordNum(records.size());
         }
         //神奇的lamda表达式，应该是从小到大
@@ -41,7 +47,7 @@ public class CategoryService {
     }
 
     /**
-     * 更新某个id对应的name
+     * 更新某个id对应的name,使用情形是获得条目之后，修改条目的名字，从而更新表中对应的记录
      * @param id
      * @param name
      */
