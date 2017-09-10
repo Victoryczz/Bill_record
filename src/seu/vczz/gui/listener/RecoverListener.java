@@ -25,7 +25,7 @@ public class RecoverListener implements ActionListener {
             return;
         }
         JFileChooser fc = new JFileChooser();
-        fc.setSelectedFile(new File("hutubill.sql"));
+        fc.setSelectedFile(new File("sql/bill_record.sql"));
         fc.setFileFilter(new FileFilter() {
 
             @Override

@@ -18,7 +18,7 @@ public class ConfigService {
     static {
         init();
     }
-    //最开始的时候先初始化这些默认的，这样的话就不能多次new ConfigService了，否则会多次初始化
+    //最开始的时候先初始化这些默认的，这样的话就不能多次new ConfigService了????static????
     public static void init(){
         init(budget, defaultBudget);
         init(mysqlPath, "");

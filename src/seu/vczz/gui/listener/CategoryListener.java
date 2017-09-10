@@ -16,6 +16,7 @@ public class CategoryListener implements ActionListener{
         CategoryPanel categoryPanel = new CategoryPanel();
 
         JButton button = (JButton) e.getSource();
+        //添加目录
         if (button == categoryPanel.bAdd){
             String name = JOptionPane.showInputDialog(null);
             //先做空判断
@@ -28,6 +29,7 @@ public class CategoryListener implements ActionListener{
             }
             new CategoryService().add(name);
         }
+        //编辑目录
         if (button == categoryPanel.bEdit){
             Category category = categoryPanel.getSelectedCategory();
             int id = category.getId();
@@ -42,6 +44,7 @@ public class CategoryListener implements ActionListener{
             }
             new CategoryService().update(id, name);
         }
+        //删除目录
         if (button == categoryPanel.bDelete){
             Category category = categoryPanel.getSelectedCategory();
 

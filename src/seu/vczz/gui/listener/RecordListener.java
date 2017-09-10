@@ -26,11 +26,11 @@ public class RecordListener implements ActionListener{
 
         if (!GUIUtil.checkZero(recordPanel.textFieldSpend, "花费金额"))
             return;
-        int soend = Integer.parseInt(recordPanel.textFieldSpend.getText());
+        int spend = Integer.parseInt(recordPanel.textFieldSpend.getText());
         Category category = recordPanel.getSelectedCategory();
         String comment = recordPanel.textFieldComment.getText();
         Date date = recordPanel.datePicker.getDate();
-        new RecordService().add(soend, category, comment, date);
+        new RecordService().add(spend, category, comment, date);
         JOptionPane.showMessageDialog(recordPanel, "添加成功");
 
         MainPanel.instance.workPanel.show(SpendPanel.instance);
