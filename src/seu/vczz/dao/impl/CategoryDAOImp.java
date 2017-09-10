@@ -18,7 +18,7 @@ public class CategoryDAOImp implements CategoryDAO{
 	 */
 	@Override
 	public void add(Category category) {
-		String sql = "INSERT INTO catagory VALUES(NULL, ?)";
+		String sql = "INSERT INTO category VALUES(NULL, ?)";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);

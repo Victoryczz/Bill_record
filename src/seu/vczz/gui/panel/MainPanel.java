@@ -25,7 +25,7 @@ public class MainPanel extends JPanel {
     //工作面板
     public CenterPanelUtil workPanel;
 
-    public MainPanel() {
+    private MainPanel() {
         GUIUtil.setImgIcon(bSpend, "home.png", "消费总览");
         GUIUtil.setImgIcon(bRecord, "record.png", "记录一下");
         GUIUtil.setImgIcon(bCategory, "category2.png", "消费分类");
@@ -44,7 +44,7 @@ public class MainPanel extends JPanel {
         //浮动
         toolBar.setFloatable(false);
         //workingPanel缩放比例0.8
-        workPanel = new CenterPanelUtil(0.8);
+        workPanel = new CenterPanelUtil(0.85);
         //布局设置边界，toolbar在上，workingPanel在中间
         setLayout(new BorderLayout());
         add(toolBar, BorderLayout.NORTH);

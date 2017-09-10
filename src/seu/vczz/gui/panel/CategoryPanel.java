@@ -8,9 +8,11 @@ import seu.vczz.util.ColorUtil;
 import seu.vczz.util.GUIUtil;
 
 import javax.swing.*;
-import javax.swing.table.TableModel;
 import java.awt.*;
 
+/**
+ * 分类面板
+ */
 public class CategoryPanel extends WorkingPanel {
     static {
         GUIUtil.useLNF();
@@ -24,9 +26,9 @@ public class CategoryPanel extends WorkingPanel {
     String[] columNames = new String[]{"分类名称", "消费次数"};
 
     public CategoryTableModel ctm = new CategoryTableModel();
-    public JTable table = new JTable((TableModel) ctm);
+    public JTable table = new JTable(ctm);
 
-    public CategoryPanel(){
+    private CategoryPanel(){
         GUIUtil.setColor(ColorUtil.blueColor, bAdd, bEdit, bDelete);
         JScrollPane scrollPane = new JScrollPane();
         JPanel pSubmit = new JPanel();

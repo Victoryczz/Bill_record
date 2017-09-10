@@ -13,7 +13,7 @@ public class CategoryListener implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        CategoryPanel categoryPanel = new CategoryPanel();
+        CategoryPanel categoryPanel = CategoryPanel.instance;
 
         JButton button = (JButton) e.getSource();
         //添加目录

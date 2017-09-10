@@ -15,7 +15,7 @@ public class RecoverPanel extends WorkingPanel {
 
     JButton bRecover = new JButton("恢复");
 
-    public RecoverPanel(){
+    private RecoverPanel(){
         GUIUtil.setColor(ColorUtil.blueColor, bRecover);
         this.add(bRecover);
 

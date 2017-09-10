@@ -14,6 +14,7 @@ public class CenterPanelUtil extends JPanel{
     private boolean strech;//是否拉伸
 
     public CenterPanelUtil(double rate, boolean strech) {
+        this.setLayout(null);
         this.rate = rate;
         this.strech = strech;
     }
@@ -49,5 +50,18 @@ public class CenterPanelUtil extends JPanel{
             ((WorkingPanel)component).updateData();
         }
         this.updateUI();
+    }
+
+    public static void main(String[] args) {
+        JFrame f = new JFrame();
+        f.setSize(500, 500);
+        f.setLocationRelativeTo(null);
+        CenterPanelUtil cp = new CenterPanelUtil(0.85, true);
+        f.setContentPane(cp);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+        JButton b = new JButton("abc");
+        cp.show(b);
+
     }
 }

@@ -17,12 +17,12 @@ public class ConfigPanel extends WorkingPanel{
     JLabel lBudget = new JLabel("本月预算(元)");
     public JTextField textFieldBudget = new JTextField("0");
 
-    JLabel lMySQL = new JLabel("安装目录");
+    JLabel lMySQL = new JLabel("MySQL安装目录");
     public JTextField textFieldMySQL = new JTextField("");
 
     JButton bSubmit = new JButton("更新");
 
-    public ConfigPanel(){
+    private ConfigPanel(){
         GUIUtil.setColor(ColorUtil.grayColor, lBudget, lMySQL);
         GUIUtil.setColor(ColorUtil.blueColor, bSubmit);
 

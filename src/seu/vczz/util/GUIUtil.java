@@ -10,6 +10,7 @@ public class GUIUtil {
     public static void setImgIcon(JButton button, String fileName, String tip){
         ImageIcon imageIcon = new ImageIcon(new File(imgFolder, fileName).getAbsolutePath());
         button.setIcon(imageIcon);
+        button.setPreferredSize(new Dimension(61, 81));
         button.setToolTipText(tip);
         button.setVerticalTextPosition(JButton.BOTTOM);
         button.setHorizontalTextPosition(JButton.CENTER);
@@ -24,7 +25,7 @@ public class GUIUtil {
     public static void showPanel(JPanel panel, double strechRate){
         GUIUtil.useLNF();
         JFrame frame = new JFrame();
-        frame.setSize(1000, 600);
+        frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
         CenterPanelUtil centerPanelUtil = new CenterPanelUtil(strechRate);
         frame.setContentPane(centerPanelUtil);
@@ -35,7 +36,7 @@ public class GUIUtil {
     }
     //默认为0.75
     public static void showPanel(JPanel panel){
-        showPanel(panel, 0.75);
+        showPanel(panel, 0.85);
     }
     //检查输入是否是数字
     public static boolean checkNum(JTextField textField, String input){
@@ -57,9 +58,16 @@ public class GUIUtil {
         if (!checkNum(textField, input)){
             return false;
         }
+        String text = textField.getText().trim();
+
+        if (0 == Integer.parseInt(text)) {
+            JOptionPane.showMessageDialog(null, input + " 不能为零");
+            textField.grabFocus();
+            return false;
+        }
         return true;
     }
-    //检查输入是否为空，是空就返回false
+    //检查输入是否为空，是空就返回true
     public static boolean checkEmpty(JTextField textField, String input){
         String text = textField.getText().trim();
         if (0 == text.length()){
@@ -70,7 +78,7 @@ public class GUIUtil {
         return false;
     }
     public static int getInt(JTextField textField){
-        return Integer.parseInt(textField.getText().trim());
+        return Integer.parseInt(textField.getText());
     }
 
     public static void useLNF() {

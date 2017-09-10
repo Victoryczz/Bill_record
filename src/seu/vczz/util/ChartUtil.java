@@ -164,7 +164,7 @@ public class ChartUtil {
     public static void main(String[] args) {
         JPanel p = new JPanel();
         JLabel l = new JLabel();
-        Image img = ChartUtil.getImage(400, 300);
+        Image img = ChartUtil.getImage(400, 400);
         Icon icon = new ImageIcon(img);
         l.setIcon(icon);
         p.add(l);

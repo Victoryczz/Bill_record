@@ -29,7 +29,7 @@ public class SpendPanel extends WorkingPanel {
 
     CircleProgressBar bar;
 
-    public SpendPanel() {
+    private SpendPanel() {
         this.setLayout(new BorderLayout());
         bar = new CircleProgressBar();
         bar.setBackgroundColor(ColorUtil.blueColor);
@@ -94,7 +94,7 @@ public class SpendPanel extends WorkingPanel {
         vAvgSpendPerDay.setText(spend.avgSpendPerDay);
         vMonthAvailable.setText(spend.monthAvailable);
         vDayAvgAvailable.setText(spend.dayAvgAvailable);
-        vMonthLeftDay.setText(spend.monthLsftDay);
+        vMonthLeftDay.setText(spend.monthLeftDay);
 
         bar.setProgress(spend.usagePercentage);
         if (spend.isOverSpend) {

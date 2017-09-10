@@ -48,6 +48,7 @@ public class DateUtil {
         //这句去掉了还不行妈的，看来是转到了下个月的一号，但是是为什么，草 原来是MONTH，而恰好MONTH和MONDAY都是2
         //c.add(Calendar.MONDAY, 1);
         c.add(Calendar.MONTH, 1);
+        c.add(Calendar.DATE, -1);
         return c.getTime();
     }
 
@@ -68,7 +69,7 @@ public class DateUtil {
 
     public static void main(String[] args) {
         //System.out.println(new Date());
-        //System.out.println(DateUtil.today());
+        System.out.println(DateUtil.today());
         System.out.println(DateUtil.monthBegin());
         System.out.println(DateUtil.monthEnd());
         System.out.println(thisMonthLeftDay());

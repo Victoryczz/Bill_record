@@ -159,10 +159,10 @@ public class RecordDAOImp implements RecordDAO{
 		List<Record> records = new ArrayList<Record>();
 
 		try {
-			String sql = "SELECT * FROM record ORDER BY id DESC WHERE date >=? and date <=? ";
+			String sql = "SELECT * FROM record WHERE date >= ? and date <= ?";
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setDate(1, DateUtil.util2sql(dateFrom) );
+			ps.setDate(1, DateUtil.util2sql(dateFrom));
 			ps.setDate(2, DateUtil.util2sql(dataTo));
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()){
@@ -259,7 +259,7 @@ public class RecordDAOImp implements RecordDAO{
         List<Record> list = new ArrayList<Record>();
 
         try {
-            String sql = "SELECT * FROM record ORDER BY id DESC WHERE date =? ";
+            String sql = "SELECT * FROM record WHERE date = ?";
             Connection con = DBUtil.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setDate(1, DateUtil.util2sql(date));

@@ -18,7 +18,7 @@ public class ReportPanel extends WorkingPanel {
 
     JLabel label = new JLabel();
 
-    public ReportPanel(){
+    private ReportPanel(){
         this.setLayout(new BorderLayout());
         List<Record> recordList = new ReportService().listThisMonthRecords();
         Image image = ChartUtil.getImage(recordList, 400, 300);

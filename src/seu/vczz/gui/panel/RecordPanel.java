@@ -36,7 +36,7 @@ public class RecordPanel extends WorkingPanel{
 
     JButton bSubmit = new JButton("记录");
 
-    public RecordPanel(){
+    private RecordPanel(){
         GUIUtil.setColor(ColorUtil.grayColor, lspend, lcategory, lcomment, ldate);
         GUIUtil.setColor(ColorUtil.blueColor, bSubmit);
         JPanel pInput = new JPanel();//记录输入框
