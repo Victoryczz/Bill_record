@@ -8,6 +8,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * category表的数据访问层
+ */
 public class CategoryDAOImp implements CategoryDAO{
 	/**
 	 * 增加一个条目（类别），一般增加的条目只有名字，所以参数只有string，传进去之后再获得该条目的ID
@@ -15,7 +18,7 @@ public class CategoryDAOImp implements CategoryDAO{
 	 */
 	@Override
 	public void add(Category category) {
-		String sql = "INSERT INTO catagory VALUE(NULL, ?)";
+		String sql = "INSERT INTO catagory VALUES(NULL, ?)";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -150,7 +153,7 @@ public class CategoryDAOImp implements CategoryDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return totalNum;
 	}
 
 }

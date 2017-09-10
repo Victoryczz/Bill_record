@@ -1,8 +1,9 @@
 package seu.vczz.dao.inter;
 
+import seu.vczz.entity.Record;
+
 import java.util.Date;
 import java.util.List;
-import seu.vczz.entity.Record;
 
 public interface RecordDAO {
 
@@ -50,7 +51,8 @@ public interface RecordDAO {
 	 * 获得当月的记录
 	 */
 	public List<Record> getMonth();
-	
+
+	public List<Record> getByDate(Date date);
 	
 	
 }

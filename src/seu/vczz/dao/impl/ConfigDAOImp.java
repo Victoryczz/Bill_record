@@ -8,12 +8,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 配置表的数据访问层
+ */
 public class ConfigDAOImp implements ConfigDAO{
 	/**
 	 * @param config  添加配置
 	 */
 	public void add(Config config) {
-		String sql = "INSERT INTO config VALUE(NULL, ?, ?)";
+		String sql = "INSERT INTO config VALUES(NULL, ?, ?)";
 		try {
 			Connection con = DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(sql);
